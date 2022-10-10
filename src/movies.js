@@ -4,7 +4,7 @@ import { order } from "./data.js";
 function PrintandoCard(film) {
     return `
         <article>
-            <p>Title: ${film.title}</p>
+            <p> ${film.title}</p>
             <img id= "imagem1" src="${film.poster}"/></p>
             <p>Director: ${film.director}</p>
             <p>Release date: ${film.release_date}</p>
@@ -36,6 +36,11 @@ function montaCard(lista) {
 printaCards.innerHTML = montaCard(data.films);
 
 // aqui termina a função de printar cards //
+
+// aqui começa a função search - pesquisar por busca //
+
+let searchMovies = document.getElementById("searchMovie")
+searchMovies.addEventListener('keyup',(filmsList) => (filmsList.title))
 
 
 // aqui começa a função de filtrar por ordem alfabética  A-Z//
@@ -102,5 +107,4 @@ classe_filtros.forEach((item) => {
 })
 
 // aqui acaba o filtro director
-// aqui começa o filtro de anos
 
