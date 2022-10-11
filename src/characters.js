@@ -21,6 +21,17 @@ function generateCharactersMovies(movies){
 
 generateCharactersMovies(data.films)
 
+
+
+
+
+
+
+
+
+
+
+
 // aqui acaba a função de printar os cards // 
 
 
@@ -49,5 +60,4 @@ function resultado(){
 
 // aqui começa a função do filtro Clean // 
 // aqui acaba  a função do filtro Clean //
-
 
