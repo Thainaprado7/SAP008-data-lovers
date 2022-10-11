@@ -1,4 +1,27 @@
 import data from "./data/ghibli/ghibli.js"
+import { orderC } from "./data.js";
+
+// aqui começa a função genérica de printar os cards //
+const printCharacters = document.getElementById("printCharacters");
+function generateCharactersMovies(movies){
+    let layout = "";
+    movies.forEach( movie => {
+        movie.people.forEach( p => {
+            layout += `<div>
+            <p> ${p.name}</p>
+            <img id= "imagem2" src = "${p.img}"/>
+            <p> Age: ${p.age}</p>
+            <p> Genre: ${p.genre}</p>
+            <p> Specie: ${p.specie}</p>
+            </div>`
+        })
+    });
+    printCharacters.innerHTML = layout;
+}
+
+generateCharactersMovies(data.films)
+
+// aqui acaba a função de printar os cards // 
 
 
 // aqui começa a função do filtro Search // 
@@ -6,6 +29,11 @@ import data from "./data/ghibli/ghibli.js"
 
 // aqui começa a função do filtro Sort Of A-Z // 
 // aqui acaba  a função do filtro Sort Of A-Z //
+
+let ordemAlfabeticaC = document.getElementById("filterSortOf")
+function resultado(){
+    return generateCharactersMovies(orderC(data.films, ordemAlfabeticaC.value))
+}
 
 // aqui começa a função do filtro Sort Of Z-A // 
 // aqui acaba  a função do filtro Sort Of Z-A // 
@@ -23,24 +51,3 @@ import data from "./data/ghibli/ghibli.js"
 // aqui acaba  a função do filtro Clean //
 
 
-// aqui começa a função genérica de printar os cards //
-const printCharacters = document.getElementById("printCharacters");
-function generateCharactersMovies(movies){
-    let layout = "";
-    movies.forEach( movie => {
-        movie.people.forEach( p => {
-            layout += `<div>
-            <p> Name: ${p.name}</p>
-            <img id= "imagem2" src = "${p.img}"/>
-            <p> Age: ${p.age}</p>
-            <p> Genre: ${p.genre}</p>
-            <p> Specie: ${p.specie}</p>
-            </div>`
-        })
-    });
-    printCharacters.innerHTML = layout;
-}
-
-generateCharactersMovies(data.films)
-
-// aqui acaba a função de printar os cards // 
