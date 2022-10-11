@@ -15,7 +15,7 @@ function PrintandoCard(film) {
 function montaCard(lista) {
     let directorFilter = document.getElementById("filterDirector").value;
     let yearFilter = document.getElementById("filterYear").value;  
-
+    let searchMovies = document.getElementById("searchMovie").value;
 
     if (directorFilter){
         lista =  lista.filter((obj) => obj.director == directorFilter);
@@ -23,6 +23,10 @@ function montaCard(lista) {
 
     if (yearFilter){
         lista = lista.filter((obj) => obj.release_date == yearFilter);
+    }
+
+    if (searchMovies){
+        lista = lista.filter((obj) => obj.title.toLowerCase().includes(searchMovies.toLowerCase()))
     }
 
 
@@ -40,8 +44,10 @@ printaCards.innerHTML = montaCard(data.films);
 // aqui começa a função search - pesquisar por busca //
 
 let searchMovies = document.getElementById("searchMovie")
-searchMovies.addEventListener('keyup',(filmsList) => (filmsList.title))
-
+searchMovies.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    printaCards.innerHTML = montaCard(data.films);
+})
 
 // aqui começa a função de filtrar por ordem alfabética  A-Z//
 
@@ -85,7 +91,6 @@ function printaFiltroDirector(filmsList){
 
 }
 
-
 // função generalista que será chamada nos filtros // 
 
 function printaSelect(objList, campoDoFiltro){
@@ -107,4 +112,3 @@ classe_filtros.forEach((item) => {
 })
 
 // aqui acaba o filtro director
-
