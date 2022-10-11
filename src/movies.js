@@ -40,7 +40,6 @@ function montaCard(lista) {
 printaCards.innerHTML = montaCard(data.films);
 
 // aqui termina a função de printar cards //
-
 // aqui começa a função search - pesquisar por busca //
 
 let searchMovies = document.getElementById("searchMovie")
@@ -49,6 +48,7 @@ searchMovies.addEventListener('keyup', (e) => {
     printaCards.innerHTML = montaCard(data.films);
 })
 
+// aqui começa a função de filtrar por busca // 
 // aqui começa a função de filtrar por ordem alfabética  A-Z//
 
 let ordemAlfabetica = document.getElementById("filterSortOf")
@@ -58,8 +58,8 @@ function resultado(){
 
 ordemAlfabetica.addEventListener("change", resultado)
 
-
-// aqui começa a função de filtrar por ordem alfabética  Z-A//
+// aqui acaba a função de filtrar por ondem alfabética a-z
+// aqui começa a função de filtrar por ordem alfabética  z-a//
 
 let ordemAlfabeticaZa = document.getElementById("filterSortOf")
 function resultado1(){
@@ -68,7 +68,7 @@ function resultado1(){
 
 ordemAlfabeticaZa.addEventListener("change", resultado1)
 
-
+// aqui acaba a função de filtrar por ordem alfabética z-a//
 // aqui começa a função de filtrar por ano//
 
 printaFiltroRelease(data.films);
@@ -80,6 +80,7 @@ function printaFiltroRelease (filmsList) {
 
 }
 
+//aqui acaba a função de filtrar por ano // 
 // aqui começa a função de filtrar diretor //
 
 printaFiltroDirector(data.films);
@@ -91,6 +92,13 @@ function printaFiltroDirector(filmsList){
 
 }
 
+// aqui acaba a função de filtrar por diretor // 
+// aqui começa a função de limpar os filtros // 
+function limpaFiltro(){
+    let filterCLean = document.getElementById("buttonClean").value ="";
+}
+
+// aqui acaba a função de limpar os filtros //
 // função generalista que será chamada nos filtros // 
 
 function printaSelect(objList, campoDoFiltro){
