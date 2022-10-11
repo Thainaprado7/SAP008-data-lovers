@@ -269,7 +269,6 @@ a {
 }
 
 
-
 #filterSpecies {
     background-color: rgba(177, 54, 217, 0.6);
 }
@@ -283,9 +282,11 @@ a {
    
 }
 #buttonClean{
-    background-color: rgba(73, 217, 54, 0.6);
+    background-color: rgba(238, 52, 160, 0.781);
 }
-
+#buttonClean:hover{
+    background-color: pink;
+}
 
 
 .printaCards {

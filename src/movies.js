@@ -1,5 +1,12 @@
 import data from "./data/ghibli/ghibli.js"
 import { order } from "./data.js";
+import {  } from "./data.js";
+import {  } from "./data.js";
+import {  } from "./data.js";
+import {  } from "./data.js";
+import {  } from "./data.js";
+import {  } from "./data.js";
+
 
 function PrintandoCard(film) {
     return `
@@ -37,7 +44,6 @@ function montaCard(lista) {
         .join("");
 }
 
-printaCards.innerHTML = montaCard(data.films);
 
 // aqui termina a função de printar cards //
 // aqui começa a função search - pesquisar por busca //
@@ -56,7 +62,6 @@ function resultado(){
     return montaCard(order(data.films, ordemAlfabetica.value))
 }
 
-ordemAlfabetica.addEventListener("change", resultado)
 
 // aqui acaba a função de filtrar por ondem alfabética a-z
 // aqui começa a função de filtrar por ordem alfabética  z-a//
@@ -65,8 +70,6 @@ let ordemAlfabeticaZa = document.getElementById("filterSortOf")
 function resultado1(){
     return montaCard(order(data.films, ordemAlfabeticaZa.value))
 }
-
-ordemAlfabeticaZa.addEventListener("change", resultado1)
 
 // aqui acaba a função de filtrar por ordem alfabética z-a//
 // aqui começa a função de filtrar por ano//
@@ -94,9 +97,11 @@ function printaFiltroDirector(filmsList){
 
 // aqui acaba a função de filtrar por diretor // 
 // aqui começa a função de limpar os filtros // 
-function limpaFiltro(){
-    let filterCLean = document.getElementById("buttonClean").value ="";
-}
+
+let cleanButton = document.getElementById("buttonClean")
+
+cleanButton.addEventListener('click', function refresh(){
+    window.location.reload();})
 
 // aqui acaba a função de limpar os filtros //
 // função generalista que será chamada nos filtros // 
@@ -110,7 +115,7 @@ function printaSelect(objList, campoDoFiltro){
     })
 }
 
-const classe_filtros = document.querySelectorAll(".conteudo-principal-filtros");
+let classe_filtros = document.querySelectorAll(".conteudo-principal-filtros");
 
 classe_filtros.forEach((item) => {
     item.addEventListener("change", (e) => {
@@ -120,3 +125,8 @@ classe_filtros.forEach((item) => {
 })
 
 // aqui acaba o filtro director
+
+
+printaCards.innerHTML = montaCard(data.films);
+ordemAlfabetica.addEventListener("change", resultado);
+ordemAlfabeticaZa.addEventListener("change", resultado1);

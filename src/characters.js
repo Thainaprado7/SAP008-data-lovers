@@ -23,8 +23,6 @@ import data from "./data/ghibli/ghibli.js"
 // aqui acaba  a função do filtro Clean //
 
 
-
-
 // aqui começa a função genérica de printar os cards //
 const printCharacters = document.getElementById("printCharacters");
 function generateCharactersMovies(movies){
