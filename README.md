@@ -25,7 +25,7 @@ Isso fez com que os dois percebessem que para fazer as animações de alta quali
 ![img](fluxogramaprototipo2.png)
 
 ## 5. Interface do Usuário
-![img](teladouser1.png)
+![img](teladouser.png)
 ![img](teladousermovies.png)
 ![img](teladousercharacters.png)
 
