@@ -59,5 +59,11 @@ function resultado(){
 // aqui acaba  a função do filtro Specie //
 
 // aqui começa a função do filtro Clean // 
+
+let cleanButton = document.getElementById("buttonClean")
+
+cleanButton.addEventListener('click', function refresh(){
+    window.location.reload();})
+     
 // aqui acaba  a função do filtro Clean //
 
