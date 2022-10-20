@@ -34,7 +34,7 @@ function generateCharactersFromMovies(list) {
 let searchCharacters = document.getElementById("searchCharacters")
 searchCharacters.addEventListener('keyup', (e) => {
     e.preventDefault();
-    printaCards.innerHTML = montaCard(data.films);
+    printCharacters.innerHTML = generateCharactersMovies(data.films);
 })
 
 // aqui acaba  a função do filtro Search // 
