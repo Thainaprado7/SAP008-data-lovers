@@ -25,9 +25,9 @@ Isso fez com que os dois percebessem que para fazer as animações de alta quali
 ![img](fluxogramaprototipo2.png)
 
 ## 5. Interface do Usuário
-![img](teladouser.png)
-![img](teladousermovies.png)
-![img](teladousercharacters.png)
+![img](telainicial.png)
+![img](telamovies.png)
+![img](telacharacters.png)
 
 ## 6. Ferramentas utilizadas no projeto
 - Monday para estruturação dos objetivos e sprints;
