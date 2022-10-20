@@ -22,29 +22,26 @@ function generateCharactersMovies(movies){
 generateCharactersMovies(data.films)
 
 
+function generateCharactersFromMovies(list) {
+    return list.reduce((novaLista, valor_atual, contador) => {
+        return novaLista.concat(valor_atual.people);
+    }, []);
+}
 
 
+// aqui começa  a função do filtro Search // 
 
+let searchCharacters = document.getElementById("searchCharacters")
+searchCharacters.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    printaCards.innerHTML = montaCard(data.films);
+})
 
-
-
-
-
-
-
-// aqui acaba a função de printar os cards // 
-
-
-// aqui começa a função do filtro Search // 
 // aqui acaba  a função do filtro Search // 
 
 // aqui começa a função do filtro Sort Of A-Z // 
 // aqui acaba  a função do filtro Sort Of A-Z //
 
-let ordemAlfabeticaC = document.getElementById("filterSortOf")
-function resultado(){
-    return generateCharactersMovies(orderC(data.films, ordemAlfabeticaC.value))
-}
 
 // aqui começa a função do filtro Sort Of Z-A // 
 // aqui acaba  a função do filtro Sort Of Z-A // 

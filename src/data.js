@@ -9,9 +9,9 @@ export function order(data, value){
 
 export function orderC(data, value){
     if (value == "A-Z"){
-        return data.sort((a, b) => a.name > b.name ? 1 : -1)
+        return data.sort((a, b) => a.people > b.people ? 1 : -1)
     }else {
-        return data.sort((a, b) => a.name < b.name ? 1 : -1)
+        return data.sort((a, b) => a.people < b.people ? 1 : -1)
     }
 
 }
