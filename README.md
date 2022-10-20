@@ -23,35 +23,16 @@ Isso fez com que os dois percebessem que para fazer as animações de alta quali
 ## 4. Desenvolvendo nosso Protótipo
 ![img](fluxogramaprototipo1.png)
 ![img](fluxogramaprototipo2.png)
+
 ## 5. Interface do Usuário
+![img](teladouser.png)
+![img](teladousermovies.png)
+![img](teladousercharacters.png)
 
-## 6. Estrutura e organização dos arquivos
-
-## 7. Ferramentas utilizadas no projeto
-
-
-informações complementares para andamento do projeto.
-
-### Primeiros passos
-
-Antes de começar a escrever o código, você deve definir seu produto com base no
-conhecimento que puder obter a respeito de seus usuários. Estas perguntas podem
-ajudar:
-
-* Quem são os usuários principais do produto?
-* Quais são os objetivos dos usuários com relação ao produto?
-* Quais são os dados mais relevantes que querem ver na interface e por quê?
-* Quando utilizam ou utilizariam o produto?
-* Toda sua investigação prévia deve ter como resultado as histórias de usuário
-  de seu projeto.
-* Não faça os protótipos de alta fidelidade de todas as suas histórias. Comece
-  somente pela que necessite para seu Sprint 1.
-
-
-
-#### UX Design (Experiência do usuário)
-
-* Pesquisa com usuarios / entrevistas
-* Princípios de design/UI
-
+## 6. Ferramentas utilizadas no projeto
+- Monday para estruturação dos objetivos e sprints;
+- Miro para desenhar o fluxo de criação;
+- Figma para o desenho do protótipo;
+- Canva para ajuste de imagens;
+- Aplicações de fontes para estilização do tema;
 
