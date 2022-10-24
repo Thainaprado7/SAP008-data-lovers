@@ -1,0 +1,344 @@
+@font-face {
+    font-family: gaegu;
+    src: url(./fonts/Gaegu-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: annie;
+    src: url(./fonts/AnnieUseYourTelescope.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: euphoria;
+    src: url(./fonts/EuphoriaScript-Regular.otf) format('opentype');
+}
+
+/* HOME*/
+
+body {
+    background: linear-gradient(275deg, #003A6F 4.45%, #007BA5 27.47%, #1E7A75 63.85%, #5CAF69 101.72%);
+}
+
+#titleMenu {
+    padding-left: 530px;
+    font-family: 'annie';
+    font-weight: 400;
+    font-size: 45px;
+    color: #FFFFFF;
+}
+
+.menu {
+    list-style-type: none;
+    font-size: 25px;
+    font-family: 'gaegu';
+    text-align: center;
+    word-spacing: 90px;
+    margin-top: -50px;
+    color: #FFFFFF;
+}
+
+ul li {
+    display: inline;
+}
+
+#home :hover {
+    border: solid 2px #003A6F;
+}
+
+#movies :hover {
+    border: solid 2px #ec03ba;
+}
+
+#character :hover {
+    border: solid 2px #ece803;
+}
+
+#about :hover {
+    border: solid 2px #2aec03;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#titleHome {
+    padding-top: 10px;
+    position: absolute;
+    padding-left: 200px;
+    font-family: 'euphoria';
+    color: white;
+    font-weight: 400;
+    font-size: 55px;
+    padding-top: 0.5px;
+}
+
+#description {
+    text-align: justify;
+    width: 400px;
+    height: 300px;
+    padding-left: 170px;
+    padding-top: 100px;
+    font-family: 'gaegu';
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 34px;
+    color: #FFFFFF;
+}
+
+#inputSlide {
+    width: 80px;
+    height: 50px;
+    padding-left: 165px;
+    margin-top: -10px;
+}
+
+#buttonTrailer {
+    padding-left: 64%;
+    margin-top: -50px;
+    width: 170px;
+    height: 75px;
+
+}
+
+#watchTrailer {
+    background: #3532eb5e;
+    border-radius: 20px;
+    width: 170px;
+    height: 35px;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.6);
+    font-size: 22px;
+    font-family: 'gaegu';
+}
+
+#watchTrailer:hover {
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.6);
+    background-color: #ef4bf5a2;
+}
+
+#imageSlide {
+    padding-left: 50%;
+
+
+}
+
+#image {
+    width: 500px;
+    height: 300px;
+    border-radius: 100px;
+    position: absolute;
+    border: ridge 10px rgba(156, 10, 156, 0.671);
+    margin-top: -350px;
+}
+
+.mensagem-rodape {
+    font-family: 'gaegu';
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    padding-top: 20px;
+
+
+}
+
+/* HOME*/
+
+
+/* inicio pagina home */
+.conteudo {
+    margin-bottom: 20px;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.conteudo-principal-escrito {
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px;
+}
+
+.conteudo-principal-escrito-titulo {
+    font-family: 'gaegu';
+    font-weight: 400;
+    font-size: 70px;
+    color: black;
+    margin: 20px;
+}
+
+.conteudo-principal-escrito-texto {
+    font-family: 'gaegu';
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
+.xxx {
+    font-family: 'gaegu';
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    column-gap: 50px 70px;
+    margin: 80px;
+}
+
+
+.conteudo-principal1 {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    width: 68%;
+}
+
+.conteudo-principal-escrito1 {
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px;
+}
+
+.conteudo-principal-escrito-titulo1 {
+    font-family: 'fontes tx2';
+    font-weight: 400;
+    font-size: 70px;
+    color: black;
+    margin: 20px;
+}
+
+.conteudo-principal-escrito-texto1 {
+    font-family: 'gaegu';
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
+/*pagina de filtros */
+
+.conteudo-principal-filtros {
+    font-family: 'gaegu';
+    font-size: 20px;
+    color: white;
+    width: 100;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.conteudo-principal-filtros :hover{
+    border: solid 1px white;
+}
+
+.conteudo-filtro-pesquise {
+    font-family: 'gaegu';
+    font-size: 20px;
+    background-color: rgba(217, 217, 217, 0.64);
+    color: black;
+    width: 200px;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.conteudo-filtro-pesquise:hover {
+    color: white;
+    border: solid 1px white;
+}
+
+#filterSortOf {
+    background-color: rgba(54, 178, 217, 0.6);
+}
+
+#filterAge {
+    background-color: rgba(217, 191, 54, 0.6);
+}
+
+#filterGenre {
+    background-color: rgba(217, 54, 93, 0.6);
+}
+
+
+#filterSpecies {
+    background-color: rgba(177, 54, 217, 0.6);
+}
+
+#filterYear{
+    background-color: rgba(177, 54, 217, 0.6);
+}
+
+#filterDirector{
+    background-color: rgba(217, 191, 54, 0.6);
+   
+}
+#buttonClean{
+    background-color: rgba(238, 52, 160, 0.781);
+}
+#buttonClean:hover{
+    background-color: pink;
+}
+
+
+.printaCards {
+    font-family: 'gaegu';
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    column-gap: 50px 70px;
+    margin: 80px;
+}
+
+#printCharacters {
+    font-family: 'gaegu';
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    column-gap: 50px 70px;
+    margin: 80px;
+}
+
+#imagem1 {
+    width: 230px;
+    height: 280px;
+    border: 3px solid white;
+}
+
+#imagem2 {
+    width: 200px;
+    height: 170px;
+    border: 3px solid white;
+}
+
+#imagem1:hover {
+    box-shadow: 15px 15px 10px 0px rgba(0, 0, 0, 0.75);
+    width: 235px;
+    height: 285px;
+}
+#imagem2:hover {
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+    width: 205px;
+    height: 175px;
+}
