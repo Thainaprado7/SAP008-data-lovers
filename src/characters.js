@@ -117,6 +117,6 @@ let classe_filtros = document.querySelectorAll(".conteudo-principal-filtros");
 classe_filtros.forEach((item) => {
     item.addEventListener("change", (e) => {
         printaCards.innerHTML = "";
-        printaCards.innerHTML = montaCard(data.films);
+        printaCards.innerHTML = montaCard(getCharListFromMovie(data.films));
     });
 })
