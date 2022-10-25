@@ -1,62 +1,122 @@
 import data from "./data/ghibli/ghibli.js"
-import { orderC } from "./data.js";
+import { orderC, getCharListFromMovie } from "./data.js";
 
-// aqui começa a função genérica de printar os cards //
-const printCharacters = document.getElementById("printCharacters");
-function generateCharactersMovies(movies){
-    let layout = "";
-    movies.forEach( movie => {
-        movie.people.forEach( p => {
-            layout += `<div>
-            <p> ${p.name}</p>
-            <img id= "imagem2" src = "${p.img}"/>
-            <p> Age: ${p.age}</p>
-            <p> Genre: ${p.genre}</p>
-            <p> Specie: ${p.specie}</p>
-            </div>`
-        })
-    });
-
-    console.log(layout)
-
-    printCharacters.innerHTML = layout;
+function PrintandoCard(people) {
+    return `
+        <article>
+            <p> ${people.name}</p>
+            <img id= "imagem2" src = "${people.img}"/>
+            <p> Age: ${people.age}</p>
+            <p> Gender: ${people.gender}</p>
+            <p> Specie: ${people.specie}</p>
+        </article>
+        `;
 }
 
-generateCharactersMovies(data.films)
+function montaCard(lista) {
+    let searchCharacters = document.getElementById("searchCharacters").value;
+    let ageFilter = document.getElementById("filterAge").value;  
+    let genderFilter = document.getElementById("filterGender").value;
+    let speciesFilter = document.getElementById("filterSpecies").value;
+
+    if (searchCharacters){
+        lista = lista.filter((obj) => obj.name.toLowerCase().includes(searchCharacters.toLowerCase()))
+    }
+
+    if (ageFilter){
+        lista = lista.filter((obj) => obj.age == ageFilter);
+    }
+
+    if (genderFilter){
+        lista =  lista.filter((obj) => obj.gender == genderFilter);
+    }
+
+    if (speciesFilter){
+        lista =  lista.filter((obj) => obj.specie == speciesFilter);
+    }
 
 
-// aqui começa  a função do filtro Search // 
+    return lista
+        .map((film) => {
+            return PrintandoCard(film);
+        })
+        .join("");
+}
+
+
+printaCards.innerHTML = montaCard(getCharListFromMovie(data.films));
+
+// aqui começa a função search - pesquisar por busca //
 
 let searchCharacters = document.getElementById("searchCharacters")
 searchCharacters.addEventListener('keyup', (e) => {
     e.preventDefault();
-    console.log(data.films)
+    printaCards.innerHTML = montaCard(getCharListFromMovie(data.films));
 })
+// aqui acaba a função search - pesquisar por busca //
 
-// aqui acaba  a função do filtro Search // 
+// aqui começa a função de filtrar por idade//
 
-// aqui começa a função do filtro Sort Of A-Z // 
-// aqui acaba  a função do filtro Sort Of A-Z //
+printaFiltroAge(getCharListFromMovie(data.films));
 
+function printaFiltroAge (filmsList) {
+    let filterAge = document.getElementById ("filterAge");
+    let ageList = filmsList.map((film) => film.age);
+    printaSelect(new Set(ageList), filterAge);
+}
 
-// aqui começa a função do filtro Sort Of Z-A // 
-// aqui acaba  a função do filtro Sort Of Z-A // 
+//aqui acaba a função de filtrar por idade // 
+// aqui começa a função de filtrar genero //
 
-// aqui começa a função do filtro Age // 
-// aqui acaba  a função do filtro Age //
+printaFiltroGender(getCharListFromMovie(data.films));
 
-// aqui começa a função do filtro Genre // 
-// aqui acaba  a função do filtro Genre //
+function printaFiltroGender(filmsList){
+    let filterGender = document.getElementById("filterGender");
+    let genderList = filmsList.map((film) => film.gender);
+    printaSelect(new Set(genderList), filterGender);
+    
+}
 
-// aqui começa a função do filtro Specie // 
-// aqui acaba  a função do filtro Specie //
+// aqui acaba a função de filtrar por genero // 
+// aqui começa a função de filtrar por especie //
 
-// aqui começa a função do filtro Clean // 
+printaFiltroSpecie(getCharListFromMovie(data.films));
 
-let cleanButton = document.getElementById("buttonClean")
+function printaFiltroSpecie(filmsList){
+    let filterSpecie = document.getElementById("filterSpecies");
+    let specieList = filmsList.map((film) => film.specie);
+    printaSelect(new Set(specieList), filterSpecie);
+    
+}
 
-cleanButton.addEventListener('click', function refresh(){
+// aqui acaba a função de filtrar por especie //
+
+// aqui começa a função de limpar os filtros // 
+
+let buttonClean = document.getElementById("buttonClean")
+
+buttonClean.addEventListener('click', function refresh(){
     window.location.reload();})
-     
-// aqui acaba  a função do filtro Clean //
+    
+// aqui acaba a função de limpar os filtros //
 
+
+// função generalista que será chamada nos filtros // 
+
+function printaSelect(objList, campoDoFiltro){
+    objList.forEach((obj)=> {
+        let option = document.createElement("option");
+        option.text = obj;
+        option.value = obj;    
+        campoDoFiltro.appendChild(option);
+    })
+}
+
+let classe_filtros = document.querySelectorAll(".conteudo-principal-filtros");
+
+classe_filtros.forEach((item) => {
+    item.addEventListener("change", (e) => {
+        printaCards.innerHTML = "";
+        printaCards.innerHTML = montaCard(getCharListFromMovie(data.films));
+    });
+})
