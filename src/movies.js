@@ -13,20 +13,20 @@ function PrintandoCard(film) {
 }
 
 function montaCard(lista) {
-    let directorFilter = document.getElementById("filterDirector").value;
-    let yearFilter = document.getElementById("filterYear").value;  
     let searchMovies = document.getElementById("searchMovie").value;
+    let yearFilter = document.getElementById("filterYear").value;  
+    let directorFilter = document.getElementById("filterDirector").value;
 
-    if (directorFilter){
-        lista =  lista.filter((obj) => obj.director == directorFilter);
+    if (searchMovies){
+        lista = lista.filter((obj) => obj.title.toLowerCase().includes(searchMovies.toLowerCase()))
     }
 
     if (yearFilter){
         lista = lista.filter((obj) => obj.release_date == yearFilter);
     }
 
-    if (searchMovies){
-        lista = lista.filter((obj) => obj.title.toLowerCase().includes(searchMovies.toLowerCase()))
+    if (directorFilter){
+        lista =  lista.filter((obj) => obj.director == directorFilter);
     }
 
 
@@ -50,24 +50,26 @@ searchMovies.addEventListener('keyup', (e) => {
 })
 
 
-
 // aqui começa a função de filtrar por busca // 
 // aqui começa a função de filtrar por ordem alfabética  A-Z//
 
 let ordemAlfabetica = document.getElementById("filterSortOf")
+
 function resultado(){
     return montaCard(order(data.films, ordemAlfabetica.value))
 }
 
+ordemAlfabetica.addEventListener("change", resultado);
+
 // aqui acaba a função de filtrar por ondem alfabética a-z
 // aqui começa a função de filtrar por ordem alfabética  z-a//
+
 let ordemAlfabeticaZa = document.getElementById("filterSortOf")
+
 function resultado1(){
     return montaCard(order(data.films, ordemAlfabeticaZa.value))
 }
 
-
-ordemAlfabetica.addEventListener("change", resultado);
 ordemAlfabeticaZa.addEventListener("change", resultado1);
 
 
