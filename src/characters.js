@@ -1,66 +1,63 @@
 import data from "./data/ghibli/ghibli.js"
-import { orderC } from "./data.js";
+import { orderC, getCharListFromMovie } from "./data.js";
 
-// aqui começa a função genérica de printar os cards //
-const printCharacters = document.getElementById("printCharacters");
-function generateCharactersMovies(movies){
-    let layout = "";
-    movies.forEach( movie => {
-        movie.people.forEach( p => {
-            layout += `<div>
-            <p> ${p.name}</p>
-            <img id= "imagem2" src = "${p.img}"/>
-            <p> Age: ${p.age}</p>
-            <p> Genre: ${p.genre}</p>
-            <p> Specie: ${p.specie}</p>
-            </div>`
+function PrintandoCard(people) {
+    return `
+        <article>
+            <p> ${people.name}</p>
+            <img id= "imagem2" src = "${people.img}"/>
+            <p> Age: ${people.age}</p>
+            <p> Gender: ${people.gender}</p>
+            <p> Specie: ${people.specie}</p>
+        </article>
+        `;
+}
+
+function montaCard(lista) {
+    let searchCharacters = document.getElementById("searchCharacters").value;
+
+
+    if (searchCharacters){
+        lista = lista.filter((obj) => obj.name.toLowerCase().includes(searchCharacters.toLowerCase()))
+    }
+
+
+
+    return lista
+        .map((film) => {
+            return PrintandoCard(film);
         })
-    });
-    printCharacters.innerHTML = layout;
-}
-
-generateCharactersMovies(data.films)
-
-
-function generateCharactersFromMovies(list) {
-    return list.reduce((novaLista, valor_atual, contador) => {
-        return novaLista.concat(valor_atual.people);
-    }, []);
+        .join("");
 }
 
 
-// aqui começa  a função do filtro Search // 
+printaCards.innerHTML = montaCard(getCharListFromMovie(data.films));
+
+// aqui começa a função search - pesquisar por busca //
+
 
 let searchCharacters = document.getElementById("searchCharacters")
 searchCharacters.addEventListener('keyup', (e) => {
     e.preventDefault();
-    printCharacters.innerHTML = generateCharactersMovies(data.films);
+    printaCards.innerHTML = montaCard(getCharListFromMovie(data.films));
 })
 
-// aqui acaba  a função do filtro Search // 
+// função generalista que será chamada nos filtros // 
 
-// aqui começa a função do filtro Sort Of A-Z // 
-// aqui acaba  a função do filtro Sort Of A-Z //
+function printaSelect(objList, campoDoFiltro){
+    objList.forEach((obj)=> {
+        let option = document.createElement("option");
+        option.text = obj;
+        option.value = obj;    
+        campoDoFiltro.appendChild(option);
+    })
+}
 
+let classe_filtros = document.querySelectorAll(".conteudo-principal-filtros");
 
-// aqui começa a função do filtro Sort Of Z-A // 
-// aqui acaba  a função do filtro Sort Of Z-A // 
-
-// aqui começa a função do filtro Age // 
-// aqui acaba  a função do filtro Age //
-
-// aqui começa a função do filtro Genre // 
-// aqui acaba  a função do filtro Genre //
-
-// aqui começa a função do filtro Specie // 
-// aqui acaba  a função do filtro Specie //
-
-// aqui começa a função do filtro Clean // 
-
-let cleanButton = document.getElementById("buttonClean")
-
-cleanButton.addEventListener('click', function refresh(){
-    window.location.reload();})
-     
-// aqui acaba  a função do filtro Clean //
-
+classe_filtros.forEach((item) => {
+    item.addEventListener("change", (e) => {
+        printaCards.innerHTML = "";
+        printaCards.innerHTML = montaCard(data.films);
+    });
+})

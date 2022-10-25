@@ -123,6 +123,5 @@ classe_filtros.forEach((item) => {
     });
 })
 
-// aqui acaba o filtro director
 
 

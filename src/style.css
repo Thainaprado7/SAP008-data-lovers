@@ -67,6 +67,7 @@ a {
     position: absolute;
     padding-left: 200px;
     font-family: 'euphoria';
+    color: white;
     font-weight: 400;
     font-size: 55px;
     padding-top: 0.5px;
@@ -264,7 +265,7 @@ a {
     background-color: rgba(217, 191, 54, 0.6);
 }
 
-#filterGenre {
+#filterGender {
     background-color: rgba(217, 54, 93, 0.6);
 }
 
