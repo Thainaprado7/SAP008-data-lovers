@@ -61,7 +61,10 @@ printaFiltroAge(getCharListFromMovie(data.films));
 
 function printaFiltroAge (filmsList) {
     let filterAge = document.getElementById ("filterAge");
-    let ageList = filmsList.map((film) => film.age);
+    let ageList = filmsList.map((film) => {
+                                            if(film.age)
+                                                return film.age 
+                                }).sort();
     printaSelect(new Set(ageList), filterAge);
 }
 
